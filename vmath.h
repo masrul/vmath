@@ -4,10 +4,6 @@
 
 #include "math.h"
 #include <vector>
-
-#define PI 3.1416
-#define Deg2Rad 0.0174533
-
 #define ASSERT_EQUAL_SIZE()                                                    \
     assert(lhs.size() == rhs.size() &&                                         \
            "Fatal Error: Both vectors must have same size")
@@ -60,7 +56,6 @@ auto operator+(const std::vector<T0>& lhs, const T1& rhs)
     std::vector<decltype(T0() + T1())> result(lhs.size(), 0);
     for (int i = 0; i < lhs.size(); ++i)
         result[i] = lhs[i] + rhs;
-
     return result;
 }
 
@@ -111,7 +106,6 @@ auto operator-(const T0& lhs, const std::vector<T1>& rhs)
     std::vector<decltype(T0() - T1())> result(rhs.size(), 0);
     for (int i = 0; i < rhs.size(); ++i)
         result[i] = lhs - rhs[i];
-
     return result;
 }
 
@@ -125,7 +119,6 @@ auto operator-(const std::vector<T0>& lhs, const T1& rhs)
     std::vector<decltype(T0() - T1())> result(lhs.size(), 0);
     for (int i = 0; i < lhs.size(); ++i)
         result[i] = lhs[i] - rhs;
-
     return result;
 }
 
@@ -176,7 +169,6 @@ auto operator*(const T0& lhs, const std::vector<T1>& rhs)
     std::vector<decltype(T0() * T1())> result(rhs.size(), 0);
     for (int i = 0; i < rhs.size(); ++i)
         result[i] = lhs * rhs[i];
-
     return result;
 }
 
@@ -190,7 +182,6 @@ auto operator*(const std::vector<T0>& lhs, const T1& rhs)
     std::vector<decltype(T0() * T1())> result(lhs.size(), 0);
     for (int i = 0; i < lhs.size(); ++i)
         result[i] = lhs[i] * rhs;
-
     return result;
 }
 
@@ -241,7 +232,6 @@ auto operator/(const T0& lhs, const std::vector<T1>& rhs)
     std::vector<decltype(T0() / T1())> result(rhs.size(), 0);
     for (int i = 0; i < rhs.size(); ++i)
         result[i] = lhs / rhs[i];
-
     return result;
 }
 
@@ -255,7 +245,6 @@ auto operator/(const std::vector<T0>& lhs, const T1& rhs)
     std::vector<decltype(T0() / T1())> result(lhs.size(), 0);
     for (int i = 0; i < lhs.size(); ++i)
         result[i] = lhs[i] / rhs;
-
     return result;
 }
 
@@ -464,7 +453,6 @@ std::vector<T> random(int len) {
     std::vector<T> result(len, 0);
     for (int i = 0; i < len; ++i)
         result[i] = get_rand<T>();
-
     return result;
 }
 
@@ -479,7 +467,6 @@ matrix<T> random(int len0, int len1) {
     for (int i = 0; i < len0; ++i)
         for (int j = 0; j < len1; ++j)
             mat[i][j] = get_rand<T>();
-
     return mat;
 }
 
@@ -488,7 +475,6 @@ template <typename T> auto sum(std::vector<T> vec)->decltype(T()+T()) {
     decltype(T()+T()) result = 0;
     for (auto a : vec)
         result += a;
-
     return result ;
 }
 
