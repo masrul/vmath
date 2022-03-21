@@ -13,12 +13,12 @@
                    std::is_arithmetic<T1>::value) == true,                     \
                   "Non-arithmetic operands")
 
-#define STATIC_ASSERT_INPLACE_INT_FLOT()                                       \
+#define STATIC_ASSERT_INPLACE_INT_FLOAT()                                      \
     static_assert((std::is_integral<T0>::value &&                              \
                    std::is_floating_point<T1>::value) == false,                \
                   "Inplace int (+=,-=,*=,/=) float (or double) is invaild");
 
-/* -----------**(vector = vector + vector)**------------- */
+/* -------------(vector = vector + vector)--------------- */
 template <typename T0, typename T1>
 auto operator+(const std::vector<T0>& lhs, const std::vector<T1>& rhs)
     -> std::vector<decltype(T0() + T1())> {
@@ -32,7 +32,7 @@ auto operator+(const std::vector<T0>& lhs, const std::vector<T1>& rhs)
     return result;
 }
 
-/* -----------**(vector = scalar + vector)**------------- */
+/* -------------(vector = scalar + vector)--------------- */
 template <typename T0, typename T1>
 auto operator+(const T0& lhs, const std::vector<T1>& rhs)
     -> std::vector<decltype(T0() + T1())> {
@@ -42,11 +42,10 @@ auto operator+(const T0& lhs, const std::vector<T1>& rhs)
     std::vector<decltype(T0() + T1())> result(rhs.size(), 0);
     for (int i = 0; i < rhs.size(); ++i)
         result[i] = lhs + rhs[i];
-
     return result;
 }
 
-/* -----------**(vector = vector + scalar )**------------- */
+/* -------------(vector = vector + scalar )--------------- */
 template <typename T0, typename T1>
 auto operator+(const std::vector<T0>& lhs, const T1& rhs)
     -> std::vector<decltype(T0() + T1())> {
@@ -59,30 +58,30 @@ auto operator+(const std::vector<T0>& lhs, const T1& rhs)
     return result;
 }
 
-/* -----------**(vector += vector)**------------- */
+/* -------------(vector += vector)--------------- */
 template <typename T0, typename T1>
 void operator+=(std::vector<T0>& lhs, const std::vector<T1>& rhs) {
 
     STATIC_ASSERT_ARITHMETIC();
-    STATIC_ASSERT_INPLACE_INT_FLOT();
+    STATIC_ASSERT_INPLACE_INT_FLOAT(;
     ASSERT_EQUAL_SIZE();
 
     for (int i = 0; i < lhs.size(); ++i)
         lhs[i] += rhs[i];
 }
 
-/* -----------**(vector += scalar)**------------- */
+/* -------------(vector += scalar)--------------- */
 template <typename T0, typename T1>
 void operator+=(std::vector<T0>& lhs, const T1& rhs) {
 
     STATIC_ASSERT_ARITHMETIC();
-    STATIC_ASSERT_INPLACE_INT_FLOT();
+    STATIC_ASSERT_INPLACE_INT_FLOAT();
 
     for (int i = 0; i < lhs.size(); ++i)
         lhs[i] += rhs;
 }
 
-/* -----------**(vector = vector - vector)**------------- */
+/* -------------(vector = vector - vector)--------------- */
 template <typename T0, typename T1>
 auto operator-(const std::vector<T0>& lhs, const std::vector<T1>& rhs)
     -> std::vector<decltype(T0() - T1())> {
@@ -96,7 +95,7 @@ auto operator-(const std::vector<T0>& lhs, const std::vector<T1>& rhs)
     return result;
 }
 
-/* -----------**(vector = scalar - vector)**------------- */
+/* -------------(vector = scalar - vector)--------------- */
 template <typename T0, typename T1>
 auto operator-(const T0& lhs, const std::vector<T1>& rhs)
     -> std::vector<decltype(T0() - T1())> {
@@ -109,7 +108,7 @@ auto operator-(const T0& lhs, const std::vector<T1>& rhs)
     return result;
 }
 
-/* -----------**(vector = vector - scalar )**------------- */
+/* -------------(vector = vector - scalar )--------------- */
 template <typename T0, typename T1>
 auto operator-(const std::vector<T0>& lhs, const T1& rhs)
     -> std::vector<decltype(T0() - T1())> {
@@ -122,30 +121,30 @@ auto operator-(const std::vector<T0>& lhs, const T1& rhs)
     return result;
 }
 
-/* -----------**(vector -= vector)**------------- */
+/* -------------(vector -= vector)--------------- */
 template <typename T0, typename T1>
 void operator-=(std::vector<T0>& lhs, const std::vector<T1>& rhs) {
 
     STATIC_ASSERT_ARITHMETIC();
-    STATIC_ASSERT_INPLACE_INT_FLOT();
+    STATIC_ASSERT_INPLACE_INT_FLOAT();
     ASSERT_EQUAL_SIZE();
 
     for (int i = 0; i < lhs.size(); ++i)
         lhs[i] -= rhs[i];
 }
 
-/* -----------**(vector -= scalar)**------------- */
+/* -------------(vector -= scalar)--------------- */
 template <typename T0, typename T1>
 void operator-=(std::vector<T0>& lhs, const T1& rhs) {
 
     STATIC_ASSERT_ARITHMETIC();
-    STATIC_ASSERT_INPLACE_INT_FLOT();
+    STATIC_ASSERT_INPLACE_INT_FLOAT();
 
     for (int i = 0; i < lhs.size(); ++i)
         lhs[i] -= rhs;
 }
 
-/* -----------**(vector = vector * vector)**------------- */
+/* -------------(vector = vector * vector)--------------- */
 template <typename T0, typename T1>
 auto operator*(const std::vector<T0>& lhs, const std::vector<T1>& rhs)
     -> std::vector<decltype(T0() * T1())> {
@@ -159,7 +158,7 @@ auto operator*(const std::vector<T0>& lhs, const std::vector<T1>& rhs)
     return result;
 }
 
-/* -----------**(vector = scalar * vector)**------------- */
+/* -------------(vector = scalar * vector)--------------- */
 template <typename T0, typename T1>
 auto operator*(const T0& lhs, const std::vector<T1>& rhs)
     -> std::vector<decltype(T0() * T1())> {
@@ -172,7 +171,7 @@ auto operator*(const T0& lhs, const std::vector<T1>& rhs)
     return result;
 }
 
-/* -----------**(vector = vector * scalar )**------------- */
+/* -------------(vector = vector * scalar )--------------- */
 template <typename T0, typename T1>
 auto operator*(const std::vector<T0>& lhs, const T1& rhs)
     -> std::vector<decltype(T0() * T1())> {
@@ -185,30 +184,30 @@ auto operator*(const std::vector<T0>& lhs, const T1& rhs)
     return result;
 }
 
-/* -----------**(vector *= vector)**------------- */
+/* -------------(vector *= vector)--------------- */
 template <typename T0, typename T1>
 void operator*=(std::vector<T0>& lhs, const std::vector<T1>& rhs) {
 
     STATIC_ASSERT_ARITHMETIC();
-    STATIC_ASSERT_INPLACE_INT_FLOT();
+    STATIC_ASSERT_INPLACE_INT_FLOAT();
     ASSERT_EQUAL_SIZE();
 
     for (int i = 0; i < lhs.size(); ++i)
         lhs[i] *= rhs[i];
 }
 
-/* -----------**(vector *= scalar)**------------- */
+/* -------------(vector *= scalar)--------------- */
 template <typename T0, typename T1>
 void operator*=(std::vector<T0>& lhs, const T1& rhs) {
 
     STATIC_ASSERT_ARITHMETIC();
-    STATIC_ASSERT_INPLACE_INT_FLOT();
+    STATIC_ASSERT_INPLACE_INT_FLOAT();
 
     for (int i = 0; i < lhs.size(); ++i)
         lhs[i] *= rhs;
 }
 
-/* -----------**(vector = vector / vector)**------------- */
+/* -------------(vector = vector / vector)--------------- */
 template <typename T0, typename T1>
 auto operator/(const std::vector<T0>& lhs, const std::vector<T1>& rhs)
     -> std::vector<decltype(T0() / T1())> {
@@ -222,7 +221,7 @@ auto operator/(const std::vector<T0>& lhs, const std::vector<T1>& rhs)
     return result;
 }
 
-/* -----------**(vector = scalar / vector)**------------- */
+/* -------------(vector = scalar / vector)--------------- */
 template <typename T0, typename T1>
 auto operator/(const T0& lhs, const std::vector<T1>& rhs)
     -> std::vector<decltype(T0() / T1())> {
@@ -235,7 +234,7 @@ auto operator/(const T0& lhs, const std::vector<T1>& rhs)
     return result;
 }
 
-/* -----------**(vector = vector / scalar )**------------- */
+/* -------------(vector = vector / scalar )--------------- */
 template <typename T0, typename T1>
 auto operator/(const std::vector<T0>& lhs, const T1& rhs)
     -> std::vector<decltype(T0() / T1())> {
@@ -248,7 +247,7 @@ auto operator/(const std::vector<T0>& lhs, const T1& rhs)
     return result;
 }
 
-/* -----------**(vector /= vector)**------------- */
+/* -------------(vector /= vector)--------------- */
 template <typename T0, typename T1>
 void operator/=(std::vector<T0>& lhs, const std::vector<T1>& rhs) {
 
@@ -261,7 +260,7 @@ void operator/=(std::vector<T0>& lhs, const std::vector<T1>& rhs) {
         lhs[i] /= rhs[i];
 }
 
-/* -----------**(vector /= scalar)**------------- */
+/* -------------(vector /= scalar)--------------- */
 template <typename T0, typename T1>
 void operator/=(std::vector<T0>& lhs, const T1& rhs) {
 
@@ -483,7 +482,6 @@ template <typename T> auto mean(std::vector<T> vec)->decltype(T()/float()) {
     decltype(T()/float()) result = 0;
     for (auto a : vec)
         result += a;
-
     return result / float(vec.size());
 }
 
