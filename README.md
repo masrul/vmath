@@ -6,14 +6,29 @@
  This library contains various operator overloading that helps reducing unneccessary for-looping, 
  
  ```cpp
+ #include "vmath.h" 
+ 
+ // Without vmath
  for (int i=0; i<n;++i){
     A[i] = B[i] + C; 
  }
+ 
+ // With vmath
+ A = B + C; 
+ 
+ // Without vmath
+ for (int i=0,i<n1,++i){
+     for (int j=0;j=n2;++j){
+         A[i,j] = B[i,j] + C; 
+     }
+ }
+ 
+ // With vmath
+ A = B + C; 
  ```
  
  ```cpp
- #include "vmath.h" 
- A = B + C; 
+ 
  ```
  
  Following operators can be overloaded using vmath.h
