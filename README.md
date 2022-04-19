@@ -17,7 +17,7 @@
  ```
  
  Following operators can be overloaded using vmath.h
- + Adition: +, +=
+ + Addition: +, +=
  + Subtraction: -, -=
  + Multiplication: *, *=
  + Division: /, /=
