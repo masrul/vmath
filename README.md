@@ -5,11 +5,11 @@
  
  ## Usages: 
  
- ### 1.Overloading operators
+ ### 1. Overloading operators
  
  This library contains various operator overloading that helps reducing unneccessary writing for-loop explicitly, 
  
- **Example-1: ** Vector addition 
+ **Example-1:** Vector addition 
  ```cpp
  #include "vmath.h" 
  
@@ -21,7 +21,7 @@
  A = B + C; 
  ```
  
- **Example-2: ** Overloading I/O output ">>"
+ **Example-2:** Overloading I/O output ">>"
  ```cpp
  //Without vmath
  for (int i=0;i<n;++i)
@@ -38,7 +38,7 @@
  + Multiplication: *, *=
  + Division: /, /=
 
-### 2.Vector initialization like Numpy 
+### 2. Vector initialization like Numpy 
 
 ```cpp
 
@@ -79,7 +79,7 @@ std::cout << vmath::argmax(v) <<std::endl;
 ```
 
 
-### 4.Matrix multiplication/transpose
+### 4. Matrix multiplication/transpose
 
 ```cpp
 // Defining matrix     
