@@ -52,7 +52,7 @@ std::matrix<float> mat = vmath::ones<float>(n1,n2);
 std::vector<float> vec= vmath::random<float>(n); 
 vmath::matrix<float> mat= vmath::random<float>(n1,n2); 
 
-// Get a vector/matrix initialized with 0 and sizde of n;
+// Get a vector/matrix initialized with 0 and size of n;
 std::vector<float> vec = vmath::zeros<float>(n); 
 std::matrix<float> mat = vmath::zeros<float>(n1,n2); 
 ```
