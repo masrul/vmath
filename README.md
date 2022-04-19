@@ -5,11 +5,11 @@
  
  ## Usages: 
  
- ### Overloading operators: 
+ ### 1.Overloading operators
  
  This library contains various operator overloading that helps reducing unneccessary writing for-loop explicitly, 
  
- **Example: 1** Vector addition 
+ **Example-1: ** Vector addition 
  ```cpp
  #include "vmath.h" 
  
@@ -21,7 +21,7 @@
  A = B + C; 
  ```
  
- **Example: 2** Overloading I/O output ">>"
+ **Example-2: ** Overloading I/O output ">>"
  ```cpp
  //Without vmath
  for (int i=0;i<n;++i)
@@ -38,7 +38,7 @@
  + Multiplication: *, *=
  + Division: /, /=
 
-## Vector initialization like numpy 
+### 2.Vector initialization like Numpy 
 
 ```cpp
 
@@ -46,15 +46,54 @@
 std::vector<float> vec = vmath::ones<float>(n); 
 std::matrix<float> mat = vmath::ones<float>(n1,n2); 
 
-// Get matrix  with randomly initialized  values (0.0 to 1.0)
+// Get vector/matrix  with randomly initialized  values (0.0 to 1.0)
 std::vector<float> vec= vmath::random<float>(n); 
 vmath::matrix<float> mat= vmath::random<float>(n1,n2); 
 
 // Get a vector/matrix initialized with 0 and sizde of n;
 std::vector<float> vec = vmath::zeros<float>(n); 
 std::matrix<float> mat = vmath::zeros<float>(n1,n2); 
-
 ```
+
+### 3. Vector cross_product, dot_product, sum, argmin, argmax 
+```cpp
+vector<float> u = {1,2,3};
+vector<int> v = {3,2,1};
+
+
+
+//cross_product
+std::cout << vmath::cross_product(v,u) <<std::endl;
+
+//dot_product
+std::cout << vmath::dot_product(v,u) <<std::endl;
+
+//sum  
+std::cout << vmath::sum(u) << std::endl; 
+
+//argmin 
+std::cout << vmath::argmin(v) <<std::endl;
+
+//argmax
+std::cout << vmath::argmax(v) <<std::endl;
+```
+
+
+### 4.Matrix multiplication/transpose
+
+```cpp
+// Defining matrix     
+vmath::matrix<float> mat0=vmath::random<float>(5000,300);
+vmath::matrix<float> mat1=vmath::random<float>(300,600);
+
+// Multiply    
+vmath::matrix<float> reslt= vmath::matmul(mat0,mat1);
+
+// Transpose 
+vmath::matrix<float> reslt= vmath::transpose(mat0);
+```
+
+
 
 
 
