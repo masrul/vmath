@@ -1,6 +1,6 @@
  # VMATH: A header only library for numpy like operation on C++ vector. 
  
-The main goal of this library is to offer a light-weight tool which mimics NUMPY like operation on C++ vector. For simple addition and subtration, we always need to write for-loops in C++. It would be nice to do these operation like NUMPY. This library also contains some useful math operations, e.g. matmul, cross_product, dot_product, transpose etc. 
+The main goal of this library is to offer a light-weight tool which mimics NUMPY like operation on C++ vector. For simple addition and subtraction, we always need to write for-loops in C++. It would be nice to do these operation like NUMPY. This library also contains some useful math operations, e.g. matmul, cross_product, dot_product, transpose etc. 
  
  ## Installation
  Copy header  file in your source directory and include into your cpp file. 
