@@ -3,8 +3,9 @@
  ## Installation
  Copy header  file in your source directory and include into your cpp file. 
  
- This library contains various operator overloading that helps reducing unneccessary for-looping, 
+ This library contains various operator overloading that helps reducing unneccessary writing for-loop explicitly, 
  
+ **Example: 1** Vector addition 
  ```cpp
  #include "vmath.h" 
  
@@ -14,20 +15,17 @@
  }
  // With vmath
  A = B + C; 
- 
- 
- // Without vmath
- for (int i=0,i<n1,++i){
-     for (int j=0;j=n2;++j){
-         A[i,j] = B[i,j] + C; 
-     }
- }
- // With vmath
- A = B + C; 
  ```
  
+ **Example: 2** Overloading I/O output ">>"
  ```cpp
+ //Without vmath
+ for (int i=0;i<n;++i)
+     std::cout>> A[i]>> " ";
+ std::endl; 
  
+ //With vmath 
+ std::cout >> A >> std::endl;
  ```
  
  Following operators can be overloaded using vmath.h
