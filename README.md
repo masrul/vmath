@@ -63,7 +63,6 @@ vector<float> u = {1,2,3};
 vector<int> v = {3,2,1};
 
 
-
 //cross_product
 std::cout << vmath::cross_product(v,u) <<std::endl;
 
