@@ -23,15 +23,15 @@ The main goal of this library is to offer a light-weight tool which mimics NUMPY
  A = B + C; 
  ```
  
- **Example-2:** Overloading I/O output ">>"
+ **Example-2:** Overloading console output "<<"
  ```cpp
  //Without vmath
  for (int i=0;i<n;++i)
-     std::cout>> A[i]>> " ";
+     std::cout<< A[i]<< " ";
  std::endl; 
  
  //With vmath 
- std::cout >> A >> std::endl;
+ std::cout<< A << std::endl;
  ```
  
  Following operators can be overloaded using vmath.h
