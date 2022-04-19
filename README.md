@@ -46,7 +46,7 @@ The main goal of this library is to offer a light-weight tool which mimics NUMPY
 
 // Get a vector/matrix initialized with 1 and size of n;
 std::vector<float> vec = vmath::ones<float>(n); 
-std::matrix<float> mat = vmath::ones<float>(n1,n2); 
+vmath::matrix<float> mat = vmath::ones<float>(n1,n2); 
 
 // Get vector/matrix  with randomly initialized  values (0.0 to 1.0)
 std::vector<float> vec= vmath::random<float>(n); 
@@ -54,7 +54,7 @@ vmath::matrix<float> mat= vmath::random<float>(n1,n2);
 
 // Get a vector/matrix initialized with 0 and size of n;
 std::vector<float> vec = vmath::zeros<float>(n); 
-std::matrix<float> mat = vmath::zeros<float>(n1,n2); 
+vmath::matrix<float> mat = vmath::zeros<float>(n1,n2); 
 ```
 
 ### 3. Vector cross_product, dot_product, sum, argmin, argmax 
