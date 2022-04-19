@@ -9,7 +9,7 @@ The main goal of this library is to offer a light-weight tool which mimics NUMPY
  
  ### 1. Overloading operators
  
- This library contains various operator overloading that helps reducing unneccessary writing for-loop explicitly, 
+ This library contains various operator overloading to avoid writing explicit for-loop, 
  
  **Example-1:** Vector addition 
  ```cpp
