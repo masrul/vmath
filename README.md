@@ -12,9 +12,18 @@
  ```
  
  ```cpp
- #include "vmath.cpp" 
+ #include "vmath.h" 
  A = B + C; 
  ```
  
+ Following operators can be overloaded using vmath.h
+ + +
+ + -
+ + *
+ + /
+ + +=
+ + -=
+ + *=
+ + /=
 
 
