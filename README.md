@@ -12,9 +12,9 @@
  for (int i=0; i<n;++i){
     A[i] = B[i] + C; 
  }
- 
  // With vmath
  A = B + C; 
+ 
  
  // Without vmath
  for (int i=0,i<n1,++i){
@@ -22,7 +22,6 @@
          A[i,j] = B[i,j] + C; 
      }
  }
- 
  // With vmath
  A = B + C; 
  ```
