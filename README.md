@@ -44,7 +44,7 @@ The main goal of this library is to offer a light-weight tool which mimics NUMPY
 
 ```cpp
 
-// Get a vector/matrix initialized with 1 and sizde of n;
+// Get a vector/matrix initialized with 1 and size of n;
 std::vector<float> vec = vmath::ones<float>(n); 
 std::matrix<float> mat = vmath::ones<float>(n1,n2); 
 
